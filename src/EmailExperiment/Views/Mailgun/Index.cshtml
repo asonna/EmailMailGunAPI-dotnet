@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "MailGun Experiment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    $(function () {
+        $("form").submit(function (event) {
+            event.preventDefault();
+            console.log("submit clicked.");
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("SendMessage")',
+                data: $(this).serialize(),
+                datatype: 'json',
+                success: function (response) {
+                    console.log(response);
+                    $("#result").html(response);
+                },
+                error: function (response) {
+                    $("#result").html(response);
+                }
+            })
+        })
+    })
+</script>
+
+<h1>Mailgun</h1>
+<hr />
+<form>
+    <label for="recipient">Recipient Email</label>
+    <input name="recipient" />
+    <label for="subject">Message Subject</label>
+    <input name="subject" />
+    <label for="text">Message Body</label>
+    <textarea name="text"></textarea>
+    <button type="submit" id="send-email">Send Test Email</button>
+</form>
+<p id="result"></p>
