@@ -1,5 +1,6 @@
 [How to set up gmail api.](https://developers.google.com/gmail/api/quickstart/dotnet)
 [Gmail developer console.](https://console.developers.google.com/apis/credentials/)
+[domains.google.com] (https://domains.google.com/registrar#z=a&d=5405775,levibibo.com&chp=z,d)
 
 
 //Mailgun code to be retrieved later for other projects
